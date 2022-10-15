@@ -1,8 +1,18 @@
+import { useEffect, useState } from "react";
 import "./App.css";
-import StarRating from "./StarRating";
 
 function App() {
-  return <StarRating totalStars={10} />;
+  const [name, setName] = useState("Jan");
+
+  useEffect(() => {
+    document.title = `Celebrate ${name}`;
+  }, []);
+  return (
+    <section>
+      <p>Congratulations {name}!</p>
+      <button onClick={() => setName("Will")}>Change Winner</button>
+    </section>
+  );
 }
 
 export default App;
