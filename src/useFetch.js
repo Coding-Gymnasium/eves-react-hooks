@@ -14,4 +14,6 @@ export function useFetch(uri) {
       .then(() => setLoading(false))
       .catch(setError);
   }, [uri]);
+
+  return { loading, data, error };
 }
